@@ -29,7 +29,6 @@ import time
 from collective.portlet.rrssb import PloneMessageFactory as _
 
 from Acquisition import aq_inner
-from collective.portlet.rrssb.interfaces import IWeekDayContent
 from z3c.form import form, field, button, group
 from plone.app.z3cform.layout import wrap_form
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
