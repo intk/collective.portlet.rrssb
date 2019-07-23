@@ -81,6 +81,10 @@ class IRRSSBPortlet(IPortletDataProvider):
         title=_(u"render_tumblr", default=u"Tumblr"),
         required=False)
 
+    render_whatsapp = schema.Bool(
+        title=_(u"render_whatsapp", default=u"Whatsapp"),
+        required=False)
+
 class Assignment(base.Assignment):
     """
     Portlet assignment.
@@ -96,8 +100,9 @@ class Assignment(base.Assignment):
     render_youtube = False
     render_pinterest = False
     render_tumblr = False
+    render_whatsapp = False
     
-    def __init__(self, render_email = False, render_facebook = False, render_instagram = False, render_linkedin = False, render_twitter = False, render_googleplus = False, render_youtube = False, render_pinterest = False, render_tumblr = False):
+    def __init__(self, render_email = False, render_facebook = False, render_instagram = False, render_linkedin = False, render_twitter = False, render_googleplus = False, render_youtube = False, render_pinterest = False, render_tumblr = False, render_whatsapp = False):
         self.render_email = render_email
         self.render_facebook = render_facebook
         self.render_instagram = render_instagram
@@ -107,6 +112,7 @@ class Assignment(base.Assignment):
         self.render_youtube = render_youtube
         self.render_pinterest = render_pinterest
         self.render_tumblr = render_tumblr
+        self.render_whatsapp = render_whatsapp
         
         
     @property
@@ -158,6 +164,9 @@ class Renderer(base.Renderer):
 
     def render_tumblr(self):
         return self.data.render_tumblr
+
+    def render_whatsapp(self):
+        return self.data.render_whatsapp
 
 class AddForm(base_AddForm):
     if PLONE5:
